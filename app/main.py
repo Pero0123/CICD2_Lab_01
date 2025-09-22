@@ -26,3 +26,12 @@ def add_user(user: User):
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="user_id already exists")
     users.append(user)
     return user
+
+@app.put("/api/users")
+def update_user(user_id: int, user: User):
+    u = 0
+    if(u.user_id == users.user_id for u in users):
+        users[u] = user
+        return user
+
+        
