@@ -41,3 +41,9 @@ def get_user(user_id: int):
         if u.user_id == user_id:
             users.remove(u)
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")        
+
+
+@app.get("/health")
+def get_health():
+    return {"status": "ok"}
+#python -m uvicorn app.main:app --reload
